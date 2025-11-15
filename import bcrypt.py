@@ -140,9 +140,3 @@ def main():
         else:
             print("\nError: Invalid option. Please select 1, 2, or 3.")
 
-if __name__ == "__main__":
-    main()
-
-
-
-
