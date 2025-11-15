@@ -1,7 +1,7 @@
 import bcrypt
 import os
 
-USER_DATA_FILE = "user.txt
+USER_DATA_FILE = "user.txt"
 
 def register_user(username, password):
     if user_exists(username):
