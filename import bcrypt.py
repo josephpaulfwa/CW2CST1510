@@ -1,7 +1,18 @@
 import bcrypt
 import os
 
-USER_DATA_FILE = "user.txt
+USER_DATA_FILE = "user.txt"
+
+def hash_password(plain_text_password):
+    password_bytes = plain_text_password.encode('utf-8')
+    salt = bcrypt.gensalt()
+    hashed = bcrypt.hashpw(password_bytes, salt)
+    return hashed.decode('utf-8')
+
+def verify_password(plain_text_password, hashed_password):
+    password_bytes = plain_text_password.encode('utf-8')
+    hash_bytes = hashed_password.encode('utf-8')
+    return bcrypt.checkpw(password_bytes, hash_bytes)
 
 def register_user(username, password):
     if user_exists(username):
